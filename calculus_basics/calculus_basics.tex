@@ -1,0 +1,112 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[left=2cm, right=1.5cm, top=2cm, bottom=2cm]{geometry}
+\setlength{\parindent}{0pt}
+\author{Ilya Novikau}
+\title{Calculus Basics}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+\section{Limits}
+\label{sec:limits}
+
+\subsection{Definition}
+\label{sec:limits:def}
+$\lim_{x \to a}f(x) = L$ \textbf{if and only if} for any $\epsilon > 0$ there is $\delta > 0$ such that $|f(x) - L| < \delta$.
+
+\subsection{Infinite Limit}
+\label{sec:limits:inf_limit}
+For every $M > 0$ ($M$ is very big number) there exists $\delta > 0$ such that for all $x$ if $0 < |x - a| < \delta$ then $f(x) > M$.
+
+\subsection{Squeeze theorem}
+\label{sec:limits:squeeze_theor}
+Regardless of what $y = f(x)$ looks like if $$g(x) <= f(x) <= h(x)$$ and $$\lim_{x \to a}g(x)=\lim_{x \to a}h(x) = L$$ then $$\lim_{x \to a}f(x) = L$$
+
+\subsection{Intermediate value theorem}
+\label{sec:limits:ivt}
+If $f(x)$ is \textbf{continuous} and the graph passes through $y = A$ and $y = C$ where $A < C$, then it also \textbf{has to pass} through $y = B$ for $A < B < C$.
+
+\section{Derivatives}
+\label{sec:derivatives}
+
+\subsection{Definition}
+\label{sec:derivatives:def}
+The derivative of $f(x)$ at the point $a$ is defined to be the limit: $$\lim_{x \to a}\dfrac{f(x) - f(a)}{x - a}$$
+
+Derivative also expressed as a limit as the change $h$ in $x$ goes to $0$: $$\lim_{h \to 0}\dfrac{f(h+a) - f(a)}{h}$$
+
+Views of derivatives:
+\begin{enumerate}
+    \item \textbf{Graphical view}: the derivative is the slope of the tangent line to the graph of the function at $a$.
+    \item \textbf{Input-nudging view}: the derivative tells us, when $x$ is nudged a little, by what factor of that change the outputs of $f$ will be changed.
+    \item \textbf{Symbolic view}: derivative of functions given by formulas: polynomials, trig functions and more.
+\end{enumerate}
+
+
+\subsection{Mean Value Theorem}
+\label{sec:derivatives:mvt}
+
+The \textit{instantaneous} rate of change (i.e. derivative) is a limit of the \textit{average} rate of change over smaller and smaller intervals.\\
+\textbf{Theorem}: If the average rate of change of $f(x)$ between $x = a$ and $x = b$ is $s$, then there must be \textit{at least one} point $c$ between $a$ and $b$ where $f'(x)=s$
+
+\subsection{Concavity}
+\label{sec:derivatives:concavity}
+
+The graph $y = f(x)$ is concave up at $a$ if and only if  $f''(a) > 0$.	It's concave down at $a$ if and only if $f''(a) < 0$.
+
+\subsection{Computing Derivatives}
+\label{sec:derivatives:computing}
+
+\subsubsection{Product Rule}
+\label{sec:derivatives:computing:product}
+
+$$(fg)'(a)=f'(a)g(a) + f(a)g'(a)$$
+
+\subsubsection{Division Rule}
+\label{sec:derivatives:computing:division}
+
+$$(\dfrac{1}{f(a)})' = \dfrac{-f'(a)}{f(a)^2}$$
+
+\subsubsection{Quotient}
+\label{sec:derivatives:computing:quotient}
+
+$$(\dfrac{f(x)}{g(x)})'=\dfrac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}$$
+
+\subsection{Exponentials and Logarithms}
+\label{sec:derivatives:exp}
+$$(e^x)' = e^x$$
+$$(\ln x)' = \dfrac{1}{x}$$
+
+\section{Linear Approximation and Applications}
+\label{sec:applications}
+
+\subsection{Linear Approximation}
+\label{sec:application:linear_approximation}
+
+It is sometimes very useful to replace a complicated function $f$ by its \textit{linear approximation} $L$.\\
+Linear approximation of function $f(x)$ in a point $a$.
+$$L(x) = f'(a)(x-a) + f(a)$$
+
+\newpage
+
+\appendix
+
+\section{Algebra}
+\label{appendix:algebra}
+
+\subsection{Line equation}
+\label{appendix:algebra:line_equation}
+
+By definition \textit{slope} is $\dfrac{\Delta y}{\Delta x}$\\
+Point-slope form of line equation: $$y - y_0 = m (x - x_0)$$
+Slope-intercept form of line equation: $$y = mx + b$$
+
+\end{document}

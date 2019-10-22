@@ -88,12 +88,28 @@ $$(\ln x)' = \dfrac{1}{x}$$
 \section{Linear Approximation and Applications}
 \label{sec:applications}
 
-\subsection{Linear Approximation}
-\label{sec:application:linear_approximation}
+\subsection{Approximation}
+\label{sec:application:approximation}
 
 It is sometimes very useful to replace a complicated function $f$ by its \textit{linear approximation} $L$.\\
 Linear approximation of function $f(x)$ in a point $a$.
 $$L(x) = f'(a)(x-a) + f(a)$$
+
+\subsubsection{Taylor polynomials}
+\label{sec:application:approximation:taylor_polynomials}
+The formula for the linear approximation to $f$ at 0 is $$L(x) = f'(0)x + f(0)$$
+For $L$ is true that \textit{$L$ and $f$ have the same value at 0 and the same derivative at 0}.\\
+Proof: \begin{enumerate}
+    \item $L(0) = f'(0) \cdot 0 + f(0) = f(0)$
+    \item $L'(x) = (f'(0)x + f(0))' = f'(0)$
+\end{enumerate}
+Below are \textbf{Taylor polynomials}. They can be used to approximate a function better and better.\\
+The linear approximation to a function at 0 is: $$y=f'(0)x + f(0)$$
+The quadratic approximation to a function at 0 is $$y=\dfrac{f''(0)}{2}x^2 + f'(0)x + f(0)$$
+The cubic approximation is $$y = \dfrac{f'''(0)}{3!}x^3 + \dfrac{f''(0)}{2}x^2 + f'(0)x + f(0)$$
+
+\subsection{Applications: Pendulums}
+\label{sec:application:pendulums}
 
 \newpage
 

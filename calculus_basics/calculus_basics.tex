@@ -34,6 +34,10 @@ Regardless of what $y = f(x)$ looks like if $$g(x) <= f(x) <= h(x)$$ and $$\lim_
 \label{sec:limits:ivt}
 If $f(x)$ is \textbf{continuous} and the graph passes through $y = A$ and $y = C$ where $A < C$, then it also \textbf{has to pass} through $y = B$ for $A < B < C$.
 
+\subsection{Continuity of function}
+\label{sec:limits:continuity}
+A function $f$ is \textbf{continuous} at a point $a$ if $\lim_{x \to a}f(x)$ exists and equals to $f(a)$.
+
 \section{Derivatives}
 \label{sec:derivatives}
 
@@ -103,12 +107,12 @@ Proof: \begin{enumerate}
     \item $L(0) = f'(0) \cdot 0 + f(0) = f(0)$
     \item $L'(x) = (f'(0)x + f(0))' = f'(0)$
 \end{enumerate}
-Below are \textbf{Taylor polynomials}. They can be used to approximate a function better and better.\\
+\textbf{Taylor polynomials} can be used to approximate a function better and better.\\
 The linear approximation to a function at 0 is: $$y=f'(0)x + f(0)$$
 The quadratic approximation to a function at 0 is $$y=\dfrac{f''(0)}{2}x^2 + f'(0)x + f(0)$$
 The cubic approximation is $$y = \dfrac{f'''(0)}{3!}x^3 + \dfrac{f''(0)}{2}x^2 + f'(0)x + f(0)$$
 
-\subsection{Applications: Pendulums}
+\subsection{Application: Pendulums}
 \label{sec:application:pendulums}
 
 \newpage

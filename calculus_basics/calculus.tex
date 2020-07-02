@@ -1,0 +1,212 @@
+\documentclass[12pt, a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage[left=1.2cm, right=1.2cm, top=2cm, bottom=2cm]{geometry}
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{1.5cm}
+\author{Ilya Novikau}
+\title{Calculus}
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+\twocolumn
+
+\section{Limits}
+\label{sec:limits}
+
+\subsection{Definition}
+\label{sec:limits:def}
+$\lim_{x \to a}f(x) = L$ \textbf{if and only if} for any $\epsilon > 0$ and $|x - a| < \epsilon$ there is $\delta > 0$ such that $|f(x) - L| < \delta$.\par
+This is, you can get $f(x)$ as close to $L$ \textit{"as close as you want"} by setting $x$ sufficiently close to $a$.
+
+\subsection{Limits Properties}
+\label{sec:limits:properties}
+Let $\lim_{x \to c}f(x)=L$ and $\lim_{x \to c}g(x)=M$. Consider properties of limits.\par
+\textbf{Sum} property: $$\lim_{x \to c}(f(x) + g(x)) = \lim_{x \to c}f(x) + \lim_{x \to c}g(x) = L + M$$
+\textbf{Difference} property: $$\lim_{x \to c}(f(x) - g(x)) = \lim_{x \to c}f(x) - \lim_{x \to c}g(x) = L - M$$
+\textbf{Product} property: $$\lim_{x \to c}(f(x)g(x)) = \lim_{x \to c}f(x) \lim_{x \to c}g(x) = LM$$
+\textbf{Division} property: $$\lim_{x \to c}\frac{f(x)}{g(x)}=\frac{\lim_{x \to c}f(x)}{\lim_{x \to c}g(x)}=\frac{L}{M}$$
+\textbf{Composite} functions: $$\lim_{x \to c}(f(g(x))) = f(lim_{x \to c}g(x))$$
+
+\subsection{Infinite Limit}
+\label{sec:limits:inf_limit}
+For every $M > 0$ ($M$ is very big number) there exists $\delta > 0$ such that for all $x$ if $0 < |x - a| < \delta$ then $f(x) > M$.
+
+\subsection{Squeeze theorem}
+\label{sec:limits:squeeze_theor}
+Regardless of what $y = f(x)$ looks like if $$g(x) <= f(x) <= h(x)$$ and $$\lim_{x \to a}g(x)=\lim_{x \to a}h(x) = L$$ then $$\lim_{x \to a}f(x) = L$$
+
+\subsection{Intermediate value theorem}
+\label{sec:limits:ivt}
+If $f(x)$ is \textbf{continuous} and the graph passes through $y = A$ and $y = C$ where $A < C$, then it also \textbf{has to pass} through $y = B$ for $A < B < C$.
+
+\subsection{Continuity of function}
+\label{sec:limits:continuity}
+A function $f$ is \textbf{continuous} at a point $a$ if $\lim_{x \to a}f(x)$ exists and equals to $f(a)$.
+
+\section{Derivatives}
+\label{sec:derivatives}
+Derivatives tell how rapidly function changes, where it has maxima and minima, how best to approximate it with lines and parabolas.
+
+\subsection{Definition}
+\label{sec:derivatives:def}
+The derivative of $f(x)$ at the point $a$ is defined to be the limit: $$\lim_{x \to a}\dfrac{f(x) - f(a)}{x - a}$$
+
+Derivative also expressed as a limit as the change $h$ in $x$ goes to $0$: $$\lim_{h \to 0}\dfrac{f(h+a) - f(a)}{h}$$
+
+Views of derivatives:
+\begin{enumerate}
+    \item \textbf{Graphical view}: the derivative is the slope of the tangent line to the graph of the function at $a$.
+    \item \textbf{Input-nudging view}: the derivative tells us, when $x$ is nudged a little, by what factor of that change the outputs of $f$ will be changed.
+    \item \textbf{Symbolic view}: derivative of functions given by formulas: polynomials, trig functions and more.
+\end{enumerate}
+
+
+\subsection{Mean Value Theorem}
+\label{sec:derivatives:mvt}
+
+The \textit{instantaneous} rate of change (i.e. derivative) is a limit of the \textit{average} rate of change over smaller and smaller intervals.\par
+\textbf{Theorem}: If the average rate of change of $f(x)$ between $x = a$ and $x = b$ is $s$, then there must be \textit{at least one} point $c$ between $a$ and $b$ where $f'(x)=s$
+
+\subsection{Concavity}
+\label{sec:derivatives:concavity}
+
+The graph $y = f(x)$ is concave up at $a$ if and only if  $f''(a) > 0$.	It's concave down at $a$ if and only if $f''(a) < 0$.
+
+\subsection{Computing Derivatives}
+\label{sec:derivatives:computing}
+
+\subsubsection{Chain Rule}
+\label{sec:derivatives:computing:chain_rule}
+$$f(g(x))' = f'(g(x)) \cdot g'(x)$$
+
+\subsubsection{Product Rule}
+\label{sec:derivatives:computing:product}
+
+$$(fg)'(a)=f'(a)g(a) + f(a)g'(a)$$
+
+\subsubsection{Division Rule}
+\label{sec:derivatives:computing:division}
+
+$$(\dfrac{1}{f(a)})' = \dfrac{-f'(a)}{f(a)^2}$$
+
+\subsubsection{Quotient}
+\label{sec:derivatives:computing:quotient}
+
+$$(\dfrac{f(x)}{g(x)})'=\dfrac{f'(x)g(x) - f(x)g'(x)}{g(x)^2}$$
+
+\subsection{Exponentials and Logarithms}
+\label{sec:derivatives:exp}
+$$(e^x)' = e^x$$
+$$(\ln x)' = \dfrac{1}{x}$$
+
+\subsection{Trigonometry Functions}
+$$\sin'{x} = \cos{x}$$
+$$\cos'{x} = -\sin{x}$$
+$$\tan'{x} = \sec^2{x}$$
+
+\section{Linear Approximation and Applications}
+\label{sec:applications}
+
+\subsection{Approximation}
+\label{sec:application:approximation}
+
+It is sometimes very useful to replace a complicated function $f$ by its \textit{linear approximation} $L$.\par
+Linear approximation of function $f(x)$ in a point $a$.
+$$L(x) = f'(a)(x-a) + f(a)$$
+
+\subsubsection{Taylor polynomials}
+\label{sec:application:approximation:taylor_polynomials}
+The formula for the linear approximation to $f$ at 0 is $$L(x) = f'(0)x + f(0)$$
+For $L$ is true that \textit{$L$ and $f$ have the same value at 0 and the same derivative at 0}.\\
+Proof: \begin{enumerate}
+    \item $L(0) = f'(0) \cdot 0 + f(0) = f(0)$
+    \item $L'(x) = (f'(0)x + f(0))' = f'(0)$
+\end{enumerate}
+\textbf{Taylor polynomials} can be used to approximate a function better and better.\par
+The linear approximation to a function at 0 is: $$y=f'(0)x + f(0)$$
+The quadratic approximation to a function at 0 is $$y=\dfrac{f''(0)}{2}x^2 + f'(0)x + f(0)$$
+The cubic approximation is $$y = \dfrac{f'''(0)}{3!}x^3 + \dfrac{f''(0)}{2}x^2 + f'(0)x + f(0)$$
+
+\subsection{Optimization}
+\label{sec:application:optimization}
+\textbf{Optimization} is a process of finding of minimum and maximum value - called \textbf{extrema} - of a function on a given interval.
+
+\subsection{Implicit Differentiation}
+\label{sec:application:impl_diff}
+Derivatives from a variable perspective:
+$$f'(x)=\dfrac{dy}{dx}$$
+
+\section{L'Hopital's Rule}
+\label{sec:lopital}
+Suppose that $f(x)$ and $g(x)$ are differetiable functions, and $f(a) = g(a) = 0$, and suppose that $g'(x)$ is non-zero in a neighborhood of $a$ (except maybe $a$ itself).
+\par
+Then:
+$$\lim_{x \to a} \dfrac{f(x)}{g(x)}=\lim_{x \to a}\dfrac{f'(x)}{g'(x)}$$ if the limit on the right-hand side exists.\par
+L'Hopital process can be iterated until and if a final answer found. It might be applied to $\underset{x \to \infty}{\lim}$
+
+\section{Riemann Sum}
+\label{sec:riemann_sum}
+Riemann sum:
+    $$RS(f, a, b, n) = \frac{b - a}{n}\sum_{i=0}^{n - 1} f(a + i \cdot \frac{b - a}{n})$$
+Average value of any function $f$:
+
+
+\subsection{Average value of a function}
+\label{sec:riemann_sum:avg}
+
+
+\section{Integrals}
+\label{sec:integrals}
+$$\int \frac {d} {dt} [f(t)]dt = f(t) + C$$
+
+\subsection{Integration Properties}
+\label{sec:integrals:props}
+$$\int [f(t) + g(t)]dt = \int f(t)dt + \int g(t)dt$$
+
+$$\int c f(t) dt = c \int f(t) dt$$
+
+\subsection{Definite Integral}
+\label{sec:integrals:definite}
+$$f(b) - f(a) = \int_{a}^{b} f'(x)dx$$
+
+\newpage
+\onecolumn
+
+\appendix
+
+\section{Algebra}
+\label{appendix:algebra}
+
+\subsection{Line equation}
+\label{appendix:algebra:line_equation}
+
+By definition \textit{slope} is $\dfrac{\Delta y}{\Delta x}$.\par
+Point-slope form of line equation: $$y - y_0 = m (x - x_0)$$
+Slope-intercept form of line equation: $$y = mx + b$$
+
+\subsection{Summing an Arithmetic Series}
+\label{appendix:algebra:sum_arithmetic_series}
+To sum up the terms of arithmetic sequence $a + (a + d) + (a + 2d) + (a + 3d) + ...$
+use formula:
+$$\sum_{k=0}^{n-1}(a + kd) = \dfrac{n}{2}(2a + (n-1)d)$$
+
+\subsection{Average value of function over closed interval}
+\label{appendix:algebra:av_of_func}
+\textbf{Average value} of a function over closed interval is some height if multiply this height on interval width gives \textit{area} under function graph.
+
+\subsection{Vieta's theorem for quadratic equations}
+\label{appendix:algebra:vieta_theorem_for_quadratic_equations}
+For quadratic equation $ax^2+bx+c=0$ where $x_1$ and $x_2$ are roots of the equation, next equations are true:
+$$x_1 \cdot x_2 = \dfrac{c}{a}$$
+$$x_1 + x_2 = -\dfrac{b}{a}$$
+
+\section{Proofs}
+
+\end{document}
